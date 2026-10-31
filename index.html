@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026年米国中間選挙 — ニュースアーカイブ</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --heading: #e6edf3;
+      --accent: #58a6ff;
+      --muted: #8b949e;
+      --link: #58a6ff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    /* Header */
+    .site-header {
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .site-header h1 { font-size: 1.6rem; color: var(--heading); margin-bottom: 0.5rem; }
+    .site-header .subtitle { color: var(--muted); font-size: 0.9rem; }
+
+    /* Archive list */
+    .archive-list { list-style: none; padding: 0; }
+    .archive-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 100px;
+      text-align: right;
+    }
+    .archive-title a {
+      font-size: 1rem;
+      color: var(--heading);
+    }
+    .archive-title a:hover { color: var(--link); }
+    .archive-title .tag-new {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #238636;
+      color: #fff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 10px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .placeholder {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .archive-item { flex-direction: column; gap: 0.25rem; }
+      .archive-date { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <h1>2026年米国中間選挙</h1>
+    <p class="subtitle">上院 35議席 ／ 下院 435議席が改選（投票日: 11月3日）</p>
+  </header>
+
+  <!--
+    =========================================================
+    ニュースアーカイブ（日付順・新しい順）
+    新規記事追加時は上段に .archive-item を追記してください。
+    =========================================================
+  -->
+
+  <ul class="archive-list">
+
+    <li class="archive-item">
+      <span class="archive-date">2026/10/31</span>
+      <span class="archive-title"><a href="news-2026-10-31.html">10月31日付ニュース — 中間選挙4日前、民主党リード</a><span class="tag-new">NEW</span></span>
+    </li>
+
+    <!-- 次の記事はここに追記 -->
+    <!--
+    <li class="archive-item">
+      <span class="archive-date">2026/11/02</span>
+      <span class="archive-title"><a href="news-2026-11-02.html">11月2日付ニュース — 投票前夜、最終追い込み</a></span>
+    </li>
+    -->
+
+  </ul>
+
+  <footer>
+    <p>&copy; 2026 &mdash; GitHub Pages 対応</p>
+  </footer>
+
+</div>
+</body>
+</html>
