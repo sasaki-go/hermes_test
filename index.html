@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026年米国中間選挙 — 最新ニュースまとめ</title>
+  <title>2026年米国中間選挙 — ニュースまとめ</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -11,8 +11,7 @@
       --border: #30363d;
       --text: #c9d1d9;
       --heading: #e6edf3;
-      --accent-dem: #58a6ff;
-      --accent-gop: #f0883e;
+      --accent: #58a6ff;
       --muted: #8b949e;
       --link: #58a6ff;
     }
@@ -25,91 +24,31 @@
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
-
-    header {
+    .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 2rem;
       margin-bottom: 2.5rem;
     }
-    header h1 {
-      font-size: 2rem;
-      color: var(--heading);
-      margin-bottom: 0.5rem;
-    }
-    header .subtitle { color: var(--muted); font-size: 1rem; }
-    header .date-published { color: var(--muted); font-size: 0.85rem; margin-top: 0.75rem; }
-
-    .polling-bar { margin-bottom: 1.5rem; }
-    .polling-bar .label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-    }
-    .polling-bar .track {
-      height: 28px;
-      background: var(--card-bg);
-      border-radius: 4px;
-      overflow: hidden;
-      display: flex;
-    }
-    .polling-bar .dem-segment {
-      background: var(--accent-dem);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding-left: 8px;
-      font-size: 0.75rem;
+    .hero h1 { font-size: 2.2rem; color: var(--heading); margin-bottom: 0.75rem; }
+    .hero .subtitle { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .hero .meta { color: var(--muted); font-size: 0.85rem; }
+    .cta-section { text-align: center; padding: 2rem 0; }
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
       color: #fff;
-      font-weight: 600;
-    }
-    .polling-bar .gop-segment {
-      background: var(--accent-gop);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 8px;
-      font-size: 0.75rem;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .news-section { margin-bottom: 2.5rem; }
-    .news-section h2 {
-      font-size: 1.4rem;
-      color: var(--heading);
-      border-left: 4px solid var(--accent-dem);
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .news-section h2.gop { border-left-color: var(--accent-gop); }
-
-    .news-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .news-card h3 {
       font-size: 1.1rem;
-      color: var(--heading);
-      margin-bottom: 0.5rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
     }
-    .news-card .meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-    .news-card p { font-size: 0.95rem; }
-
+    .cta-button:hover { background: #3a8bf0; text-decoration: none; }
+    .cta-sub { color: var(--muted); font-size: 0.9rem; margin-top: 0.75rem; }
     .key-facts {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
       margin-bottom: 2.5rem;
     }
@@ -120,219 +59,72 @@
       padding: 1rem 1.25rem;
       text-align: center;
     }
-    .fact-box .value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--heading);
+    .fact-box .value { font-size: 1.8rem; font-weight: 700; color: var(--heading); }
+    .fact-box .desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    .highlights { list-style: none; padding: 0; }
+    .highlights li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
     }
-    .fact-box .desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
+    .highlights li:last-child { border-bottom: none; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
     }
-
-    .race-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-    .race-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-    }
-    .race-row .state { font-weight: 600; color: var(--heading); min-width: 100px; }
-    .race-row .dem { color: var(--accent-dem); }
-    .race-row .gop { color: var(--accent-gop); }
-    .race-row .lead { font-size: 0.8rem; color: var(--muted); }
-
+    .tag-dem { background: #0c2d6b33; color: #58a6ff; }
+    .tag-gop { background: #4a200033; color: #f0883e; }
+    .tag-pol { background: #3a005a33; color: #bc8cff; }
+    .tag-eco { background: #004a2e33; color: #3fb950; }
     footer {
       border-top: 1px solid var(--border);
       padding-top: 1.5rem;
       margin-top: 3rem;
       font-size: 0.8rem;
       color: var(--muted);
+      text-align: center;
     }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.4rem; }
-      .race-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-    }
+    @media (max-width: 600px) { .hero h1 { font-size: 1.5rem; } }
   </style>
 </head>
 <body>
-
 <div class="container">
-
-  <header>
-    <h1>2026年米国中間選挙 — 最新ニュースまとめ</h1>
-    <p class="subtitle">上院100議席中35議席、下院435議席全議席が改選。投票日は11月3日（火）。</p>
-    <p class="date-published">更新日: 2026年10月31日 ｜ 対象: 中間選挙（選挙4日前）</p>
+  <header class="hero">
+    <h1>2026年米国中間選挙</h1>
+    <p class="subtitle">上院 35議席 ／ 下院 435議席が改選</p>
+    <p class="meta">最終更新: 2026年10月31日 ｜ 投票まであと4日</p>
   </header>
 
   <div class="key-facts">
-    <div class="fact-box">
-      <div class="value">11/3</div>
-      <div class="desc">投票日</div>
-    </div>
-    <div class="fact-box">
-      <div class="value">8 pts</div>
-      <div class="desc">民主党の全国リード（支持率）</div>
-    </div>
-    <div class="fact-box">
-      <div class="value">4,480万</div>
-      <div class="desc">期日前投票済（10/30時点）</div>
-    </div>
-    <div class="fact-box">
-      <div class="value">37%</div>
-      <div class="desc">大統領支持率（不支持61%）</div>
-    </div>
+    <div class="fact-box"><div class="value">11/3</div><div class="desc">投票日</div></div>
+    <div class="fact-box"><div class="value" style="color:#58a6ff">52 → 44</div><div class="desc">民主党 共和党（支持率）</div></div>
+    <div class="fact-box"><div class="value">4,480万</div><div class="desc">期日前投票済み</div></div>
+    <div class="fact-box"><div class="value" style="color:#f0883e">37%</div><div class="desc">大統領支持率</div></div>
   </div>
 
-  <section class="news-section">
-    <h2>全国世論調査の状況</h2>
+  <h2 style="color:var(--heading); margin-bottom:1rem;">最新ニュースを読む</h2>
+  <div class="cta-section">
+    <a href="news.html" class="cta-button">ニュース記事へ →</a>
+    <p class="cta-sub">詳細な報道・世論調査データ・注目選挙戦のまとめ</p>
+  </div>
 
-    <div class="news-card">
-      <h3>民主党が全国で8ポイント差のリード — NPR/PBS/Marist 調査</h3>
-      <p class="meta">調査期間: 2026年10月19〜20日 ｜ 標本: 1,289人の有権者</p>
-      <p>民主党候補が52%、共和党候補が44%。有権者では民主党が10ポイント差となっている。共和党支持者との違いを望む有権者が55%に上る。Trump大統領の支持率は37%（不支持61%）まで低下。</p>
-    </div>
-
-    <div class="news-card">
-      <h3>有権者の関心トップは「物価高」— 生活費が最大のテーマ</h3>
-      <p>34%の有権者が「物価高」を最優先課題と回答。2番目は「民主主義の維持」（33%）、次いで移民（12%）、外交（5%）。家族の経済状況が悪化していると答えた有権者は38%にのぼる。</p>
-    </div>
-
-    <div class="polling-bar">
-      <div class="label">
-        <span>民主党 <strong style="color:var(--accent-dem)">52%</strong></span>
-        <span>共和党 <strong style="color:var(--accent-gop)">44%</strong></span>
-      </div>
-      <div class="track">
-        <div class="dem-segment" style="width:52%">52%</div>
-        <div class="gop-segment" style="width:44%">44%</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="news-section">
-    <h2>選挙運動の最前線</h2>
-
-    <div class="news-card">
-      <h3>Trump 大統領 — 各地の集会取消し、電話演説へ</h3>
-      <p>Trump 大統領はカンザスとアイオワでの集会取消しを発表し、19州を対象とした一斉電話演説（tele-rally）に切り替え。一方、フロリダ・デイトンビーチでは金曜日に集会を予定。サウスカロライナでは共和党上院候補 Darline Graham 支援のため演説を行い、「私に投票していると思い込んでほしい」と支持者に呼びかけた。</p>
-    </div>
-
-    <div class="news-card">
-      <h3>Obama 氏 — ジョージアで Ossoff 候補を支援</h3>
-      <p>オバマ元大統領がジョージアを訪問し、Jon Ossoff 上院候補を支援。Trump 大統領の経済政策とイラン戦争への取り組みを批判した。</p>
-    </div>
-
-    <div class="news-card">
-      <h3>Kamala Harris 副大統領 — ジョージアで若者投票を促す</h3>
-      <p>Harris 副大統領はアトランタのクラークアトランタ大学で集会を開き、若年層の投票を促進。マコーンでも生活費上昇を批判した。</p>
-    </div>
-
-    <div class="news-card">
-      <h3>Vance 副大統領 — テキサスで Paxton 候補を支援</h3>
-      <p>Vance 副大統領はデラス近郊のウェザーフォードで、共和党上院候補 Ken Paxton とともに集会。テキサスは「カリフォルニアにはならない」と訴えた。</p>
-    </div>
-  </section>
-
-  <section class="news-section">
-    <h2>注目される上院選挙（民主党リード）</h2>
-
-    <div class="race-grid">
-      <div class="race-row">
-        <span class="state">テキサス</span>
-        <span class="dem">Talarico 49%</span>
-        <span class="lead">▲ 6</span>
-        <span class="gop">Paxton 43%</span>
-      </div>
-      <div class="race-row">
-        <span class="state">ミシガン</span>
-        <span class="dem">El-Sayed 49%</span>
-        <span class="lead">▲ 7</span>
-        <span class="gop">Rogers 42%</span>
-      </div>
-      <div class="race-row">
-        <span class="state">ジョージア</span>
-        <span class="dem">Ossoff</span>
-        <span class="lead">接戦</span>
-        <span class="gop">Collins</span>
-      </div>
-      <div class="race-row">
-        <span class="state">カンザス</span>
-        <span class="dem">Hamilton</span>
-        <span class="lead">接戦</span>
-        <span class="gop">Marshall</span>
-      </div>
-      <div class="race-row">
-        <span class="state">メイン</span>
-        <span class="dem">民主党</span>
-        <span class="lead">接戦</span>
-        <span class="gop">共和党</span>
-      </div>
-      <div class="race-row">
-        <span class="state">ニューハンプシャー</span>
-        <span class="dem">民主党</span>
-        <span class="lead">接戦</span>
-        <span class="gop">共和党</span>
-      </div>
-    </div>
-    <p style="font-size:0.85rem; color:var(--muted); margin-top:0.75rem;">※ CNN 調査他（2026年10月下旬）</p>
-  </section>
-
-  <section class="news-section gop">
-    <h2 class="gop">アルバーカ上院選挙 — 二重の名前問題</h2>
-
-    <div class="news-card">
-      <h3>「2人の Dan Sullivan」— 投票日までに解決するか？</h3>
-      <p>現職の共和党上院議員 Dan Sullivan と同名の独立系候補 Daniel J. Sullivan がおり、民主党の選挙妨害との疑惑が浮上。Trump 大統領は「選挙妨害」と非難。DOJ が刑事捜査を開始し、アルバーカ州知事も州レベルの調査を指示。民主党候補 Mary Peltola は「無実」を主張している。</p>
-      <p style="margin-top:0.75rem;">この選挙が上院支配を分けると、結果確定まで数週間かかる可能性もある。</p>
-    </div>
-
-    <div class="news-card">
-      <h3>カリフォルニア — DOJ が投票調査を拡大</h3>
-      <p>DOJ が州・地方の選挙関係者に対しグランド・ジャリー証喚嘱状を送付。2万人の有権者が非市民の可能性があるとの疑いがあるが、裁判所は Trump 政権の要請を却下している。</p>
-    </div>
-  </section>
-
-  <section class="news-section">
-    <h2>農家— 複雑な政治姿勢</h2>
-
-    <div class="news-card">
-      <h3>カンザスの農家 — Trump への怒り</h3>
-      <p>イラン戦争によるディーゼル・肥料価格の高騰で、カンザスの農家の操業費は前年比73万7,375ドル増。干ばつ、商品価格低迷、貿易戦争で収益は32万5,000ドル減。農家は政治的忠誠心を揺るがしており、Trump 大統領と共和党上院候補 Roger Marshall への怒りが強まっている。</p>
-    </div>
-  </section>
-
-  <section class="news-section">
-    <h2>次の展開</h2>
-
-    <div class="news-card">
-      <h3>投票日前夜の動き</h3>
-      <ul style="padding-left: 1.25rem; margin-top:0.5rem;">
-        <li>Trump 大統領 — フロリダ・デイトンビーチ集会（10/31金）</li>
-        <li>Kamala Harris — ジョージア州アトランタで民主党集会</li>
-        <li>期日前投票は4,480万人（午前投票2,360万、郵便投票2,130万）</li>
-        <li>11月3日 本投票日 — 全米で午前6〜8時頃開場、深夜に出口調査開始</li>
-      </ul>
-    </div>
-  </section>
+  <h2 style="color:var(--heading); margin-bottom:1rem;">見出しまとめ</h2>
+  <ul class="highlights">
+    <li><span class="tag tag-dem">民主</span>民主党が全国で8ポイント差のリード — NPR/PBS/Marist 世論調査</li>
+    <li><span class="tag tag-gop">共和</span>Trump大統領、カンザス・アイオワ集会取消し → 電話演説へ移行</li>
+    <li><span class="tag tag-dem">民主</span>Obama氏 / Harris副大統領がジョージアでOssoff候補を支援</li>
+    <li><span class="tag tag-pol">政</span>「2人のDan Sullivan」問題 — アルバーカ上院選挙でDOJ捜査</li>
+    <li><span class="tag tag-eco">経済</span>カンザス農家、物価高に怒り — 共和党への支持揺らぐ</li>
+    <li><span class="tag tag-pol">政</span>DOJがカリフォルニアの投票調査を拡大 — 非市民有権者疑惑</li>
+  </ul>
 
   <footer>
-    <p>
-      情報源: Al Jazeera, CBS News, NPR/PBS/Marist Poll, Reuters, BBC, Rutgers University, ABC News, CNN<br>
-      作成日: 2026年10月31日 ｜ GitHub Pages 対応
-    </p>
+    <p>情報源: Al Jazeera, CBS News, NPR/PBS/Marist Poll, Reuters, BBC, Rutgers University, ABC News, CNN<br>&copy; 2026 &mdash; GitHub Pages 対応</p>
   </footer>
-
 </div>
-
 </body>
 </html>
