@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026年米国中間選挙 — ニュースまとめ</title>
+  <title>2026年米国中間選挙 — ニュースアーカイブ</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -24,62 +24,59 @@
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
-    .hero {
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    /* Header */
+    .site-header {
       text-align: center;
-      padding: 3rem 0 2rem;
+      padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
-    .hero h1 { font-size: 2.2rem; color: var(--heading); margin-bottom: 0.75rem; }
-    .hero .subtitle { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
-    .hero .meta { color: var(--muted); font-size: 0.85rem; }
-    .cta-section { text-align: center; padding: 2rem 0; }
-    .cta-button {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 1rem 2.5rem;
-      border-radius: 8px;
-    }
-    .cta-button:hover { background: #3a8bf0; text-decoration: none; }
-    .cta-sub { color: var(--muted); font-size: 0.9rem; margin-top: 0.75rem; }
-    .key-facts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .site-header h1 { font-size: 1.6rem; color: var(--heading); margin-bottom: 0.5rem; }
+    .site-header .subtitle { color: var(--muted); font-size: 0.9rem; }
+
+    /* Archive list */
+    .archive-list { list-style: none; padding: 0; }
+    .archive-item {
+      display: flex;
+      align-items: baseline;
       gap: 1rem;
-      margin-bottom: 2.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
     }
-    .fact-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 100px;
+      text-align: right;
+    }
+    .archive-title a {
+      font-size: 1rem;
+      color: var(--heading);
+    }
+    .archive-title a:hover { color: var(--link); }
+    .archive-title .tag-new {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #238636;
+      color: #fff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 10px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .placeholder {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 2rem 0;
       text-align: center;
     }
-    .fact-box .value { font-size: 1.8rem; font-weight: 700; color: var(--heading); }
-    .fact-box .desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
-    .highlights { list-style: none; padding: 0; }
-    .highlights li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 1rem;
-    }
-    .highlights li:last-child { border-bottom: none; }
-    .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      margin-right: 0.5rem;
-    }
-    .tag-dem { background: #0c2d6b33; color: #58a6ff; }
-    .tag-gop { background: #4a200033; color: #f0883e; }
-    .tag-pol { background: #3a005a33; color: #bc8cff; }
-    .tag-eco { background: #004a2e33; color: #3fb950; }
+
     footer {
       border-top: 1px solid var(--border);
       padding-top: 1.5rem;
@@ -88,43 +85,49 @@
       color: var(--muted);
       text-align: center;
     }
-    @media (max-width: 600px) { .hero h1 { font-size: 1.5rem; } }
+
+    @media (max-width: 500px) {
+      .archive-item { flex-direction: column; gap: 0.25rem; }
+      .archive-date { text-align: left; }
+    }
   </style>
 </head>
 <body>
 <div class="container">
-  <header class="hero">
+
+  <header class="site-header">
     <h1>2026年米国中間選挙</h1>
-    <p class="subtitle">上院 35議席 ／ 下院 435議席が改選</p>
-    <p class="meta">最終更新: 2026年10月31日 ｜ 投票まであと4日</p>
+    <p class="subtitle">上院 35議席 ／ 下院 435議席が改選（投票日: 11月3日）</p>
   </header>
 
-  <div class="key-facts">
-    <div class="fact-box"><div class="value">11/3</div><div class="desc">投票日</div></div>
-    <div class="fact-box"><div class="value" style="color:#58a6ff">52 → 44</div><div class="desc">民主党 共和党（支持率）</div></div>
-    <div class="fact-box"><div class="value">4,480万</div><div class="desc">期日前投票済み</div></div>
-    <div class="fact-box"><div class="value" style="color:#f0883e">37%</div><div class="desc">大統領支持率</div></div>
-  </div>
+  <!--
+    =========================================================
+    ニュースアーカイブ（日付順・新しい順）
+    新規記事追加時は上段に .archive-item を追記してください。
+    =========================================================
+  -->
 
-  <h2 style="color:var(--heading); margin-bottom:1rem;">最新ニュースを読む</h2>
-  <div class="cta-section">
-    <a href="news.html" class="cta-button">ニュース記事へ →</a>
-    <p class="cta-sub">詳細な報道・世論調査データ・注目選挙戦のまとめ</p>
-  </div>
+  <ul class="archive-list">
 
-  <h2 style="color:var(--heading); margin-bottom:1rem;">見出しまとめ</h2>
-  <ul class="highlights">
-    <li><span class="tag tag-dem">民主</span>民主党が全国で8ポイント差のリード — NPR/PBS/Marist 世論調査</li>
-    <li><span class="tag tag-gop">共和</span>Trump大統領、カンザス・アイオワ集会取消し → 電話演説へ移行</li>
-    <li><span class="tag tag-dem">民主</span>Obama氏 / Harris副大統領がジョージアでOssoff候補を支援</li>
-    <li><span class="tag tag-pol">政</span>「2人のDan Sullivan」問題 — アルバーカ上院選挙でDOJ捜査</li>
-    <li><span class="tag tag-eco">経済</span>カンザス農家、物価高に怒り — 共和党への支持揺らぐ</li>
-    <li><span class="tag tag-pol">政</span>DOJがカリフォルニアの投票調査を拡大 — 非市民有権者疑惑</li>
+    <li class="archive-item">
+      <span class="archive-date">2026/10/31</span>
+      <span class="archive-title"><a href="news-2026-10-31.html">10月31日付ニュース — 中間選挙4日前、民主党リード</a><span class="tag-new">NEW</span></span>
+    </li>
+
+    <!-- 次の記事はここに追記 -->
+    <!--
+    <li class="archive-item">
+      <span class="archive-date">2026/11/02</span>
+      <span class="archive-title"><a href="news-2026-11-02.html">11月2日付ニュース — 投票前夜、最終追い込み</a></span>
+    </li>
+    -->
+
   </ul>
 
   <footer>
-    <p>情報源: Al Jazeera, CBS News, NPR/PBS/Marist Poll, Reuters, BBC, Rutgers University, ABC News, CNN<br>&copy; 2026 &mdash; GitHub Pages 対応</p>
+    <p>&copy; 2026 &mdash; GitHub Pages 対応</p>
   </footer>
+
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026年米国中間選挙 — 最新ニュースまとめ</title>
+  <title>10月31日付ニュース — 2026年米国中間選挙まとめ</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -13,6 +13,7 @@
       --heading: #e6edf3;
       --accent-dem: #58a6ff;
       --accent-gop: #f0883e;
+      --accent-date: #3fb950;
       --muted: #8b949e;
       --link: #58a6ff;
     }
@@ -33,55 +34,94 @@
       padding-bottom: 2rem;
       margin-bottom: 2.5rem;
     }
-    header h1 { font-size: 2rem; color: var(--heading); margin-bottom: 0.5rem; }
-    header .subtitle { color: var(--muted); font-size: 1rem; }
-    header .date-published { color: var(--muted); font-size: 0.85rem; margin-top: 0.75rem; }
+    header .date-badge {
+      display: inline-block;
+      background: var(--accent-date);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.75rem;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+    }
+    header h1 { font-size: 1.6rem; color: var(--heading); margin-bottom: 0.5rem; }
+    header .subtitle { color: var(--muted); font-size: 0.95rem; }
+    header .date-published { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; }
+    .news-section { margin-bottom: 2.5rem; }
+    .news-section h2 {
+      font-size: 1.2rem;
+      color: var(--heading);
+      border-left: 4px solid var(--accent-dem);
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .news-section h2.gop { border-left-color: var(--accent-gop); }
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .news-card h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: 0.5rem; }
+    .news-card .meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .news-card p { font-size: 0.95rem; }
     .polling-bar { margin-bottom: 1.5rem; }
-    .polling-bar .label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .polling-bar .label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.3rem; }
     .polling-bar .track { height: 28px; background: var(--card-bg); border-radius: 4px; overflow: hidden; display: flex; }
     .polling-bar .dem-segment { background: var(--accent-dem); height: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 8px; font-size: 0.75rem; color: #fff; font-weight: 600; }
     .polling-bar .gop-segment { background: var(--accent-gop); height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 0.75rem; color: #fff; font-weight: 600; }
-    .news-section { margin-bottom: 2.5rem; }
-    .news-section h2 { font-size: 1.4rem; color: var(--heading); border-left: 4px solid var(--accent-dem); padding-left: 0.75rem; margin-bottom: 1rem; }
-    .news-section h2.gop { border-left-color: var(--accent-gop); }
-    .news-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
-    .news-card h3 { font-size: 1.1rem; color: var(--heading); margin-bottom: 0.5rem; }
-    .news-card .meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
-    .news-card p { font-size: 0.95rem; }
-    .key-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
-    .fact-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; text-align: center; }
-    .fact-box .value { font-size: 1.8rem; font-weight: 700; color: var(--heading); }
-    .fact-box .desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
-    .race-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-    .race-row { display: flex; justify-content: space-between; align-items: center; background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; }
-    .race-row .state { font-weight: 600; color: var(--heading); min-width: 100px; }
-    .race-row .dem { color: var(--accent-dem); }
-    .race-row .gop { color: var(--accent-gop); }
-    .race-row .lead { font-size: 0.8rem; color: var(--muted); }
-    footer { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 3rem; font-size: 0.8rem; color: var(--muted); }
+    .key-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 2.5rem; }
+    .fact-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; text-align: center; }
+    .fact-box .value { font-size: 1.5rem; font-weight: 700; color: var(--heading); }
+    .fact-box .desc { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+    .race-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+    .race-row {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.6rem 1rem;
+    }
+    .race-row .state { font-weight: 600; color: var(--heading); min-width: 90px; font-size: 0.9rem; }
+    .race-row .dem { color: var(--accent-dem); font-size: 0.9rem; }
+    .race-row .gop { color: var(--accent-gop); font-size: 0.9rem; }
+    .race-row .lead { font-size: 0.75rem; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .sources { margin-top: 1.5rem; }
+    .sources h4 { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .sources ul { padding-left: 1.2rem; }
+    .sources li { font-size: 0.8rem; color: var(--muted); }
     @media (max-width: 600px) {
-      header h1 { font-size: 1.4rem; }
-      .race-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      header h1 { font-size: 1.3rem; }
+      .race-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <a href="index.html" class="back-link">← TOPへ戻る</a>
+
+  <a href="index.html" class="back-link">← アーカイブへ戻る</a>
+
   <header>
-    <h1>2026年米国中間選挙 — 最新ニュースまとめ</h1>
+    <span class="date-badge">2026年10月31日（土）</span>
+    <h1>2026年米国中間選挙 — その日のニュース</h1>
     <p class="subtitle">上院100議席中35議席、下院435議席全議席が改選。投票日は11月3日（火）。</p>
-    <p class="date-published">更新日: 2026年10月31日 ｜ 対象: 中間選挙（選挙4日前）</p>
+    <p class="date-published">作成日: 2026年10月31日 ｜ 投票日まであと4日</p>
   </header>
 
   <div class="key-facts">
     <div class="fact-box"><div class="value">11/3</div><div class="desc">投票日</div></div>
-    <div class="fact-box"><div class="value">8 pts</div><div class="desc">民主党の全国リード（支持率）</div></div>
-    <div class="fact-box"><div class="value">4,480万</div><div class="desc">期日前投票済（10/30時点）</div></div>
-    <div class="fact-box"><div class="value">37%</div><div class="desc">大統領支持率（不支持61%）</div></div>
+    <div class="fact-box"><div class="value" style="color:#58a6ff">▲ 8 pts</div><div class="desc">民主党全国リード</div></div>
+    <div class="fact-box"><div class="value">4,480万</div><div class="desc">期日前投票済</div></div>
+    <div class="fact-box"><div class="value" style="color:#f0883e">37%</div><div class="desc">大統領支持率</div></div>
   </div>
 
-  <!-- Section 1: National polling -->
+  <!-- 全国世論調査 -->
   <section class="news-section">
     <h2>全国世論調査の状況</h2>
     <div class="news-card">
@@ -99,7 +139,7 @@
     </div>
   </section>
 
-  <!-- Section 2: Campaign trail -->
+  <!-- 選挙運動 -->
   <section class="news-section">
     <h2>選挙運動の最前線</h2>
     <div class="news-card">
@@ -120,7 +160,7 @@
     </div>
   </section>
 
-  <!-- Section 3: Senate races -->
+  <!-- 上院選挙 -->
   <section class="news-section">
     <h2>注目される上院選挙（民主党リード）</h2>
     <div class="race-grid">
@@ -131,10 +171,10 @@
       <div class="race-row"><span class="state">メイン</span><span class="dem">民主党</span><span class="lead">接戦</span><span class="gop">共和党</span></div>
       <div class="race-row"><span class="state">ニューハンプシャー</span><span class="dem">民主党</span><span class="lead">接戦</span><span class="gop">共和党</span></div>
     </div>
-    <p style="font-size:0.85rem; color:var(--muted); margin-top:0.75rem;">※ CNN 調査他（2026年10月下旬）</p>
+    <p style="font-size:0.8rem; color:var(--muted); margin-top:0.5rem;">※ CNN 調査他（2026年10月下旬）</p>
   </section>
 
-  <!-- Section 4: Alaska controversy -->
+  <!-- アルバーカ紛争 -->
   <section class="news-section gop">
     <h2 class="gop">アルバーカ上院選挙 — 二重の名前問題</h2>
     <div class="news-card">
@@ -148,7 +188,7 @@
     </div>
   </section>
 
-  <!-- Section 5: Farmers -->
+  <!-- 農家 -->
   <section class="news-section">
     <h2>農家— 複雑な政治姿勢</h2>
     <div class="news-card">
@@ -157,7 +197,7 @@
     </div>
   </section>
 
-  <!-- Section 6: What's next -->
+  <!-- 次の展開 -->
   <section class="news-section">
     <h2>次の展開</h2>
     <div class="news-card">
@@ -172,8 +212,16 @@
   </section>
 
   <footer>
-    <p>情報源: Al Jazeera, CBS News, NPR/PBS/Marist Poll, Reuters, BBC, Rutgers University, ABC News, CNN<br>作成日: 2026年10月31日 ｜ GitHub Pages 対応</p>
+    <div class="sources">
+      <h4>情報源</h4>
+      <ul>
+        <li>Al Jazeera, CBS News, NPR/PBS/Marist Poll, Reuters, BBC</li>
+        <li>Rutgers University, ABC News, CNN</li>
+      </ul>
+    </div>
+    <p style="margin-top:1rem;">&copy; 2026 &mdash; GitHub Pages 対応</p>
   </footer>
+
 </div>
 </body>
 </html>
